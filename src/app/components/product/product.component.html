@@ -1,0 +1,26 @@
+<br />
+<div class="row">
+  <div class="col-sm-3" *ngFor="let p of subcat">
+    <br />
+    <div class="card">
+      <img
+        src="{{ 'http://rjtmobile.com/grocery/images/' + p.image }}"
+        style="height: 160px"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="height: 32px">{{ p.productName }}</h5>
+        <h4>
+          {{ p.price | currency: "INR" }}
+          <span style="color: #666; font-size: 16px"
+            ><del>{{ p.mrp | currency: "INR" }}</del></span
+          >
+        </h4>
+        <button (click)="onSelectProduct(p)" class="btn btn-success btn-block">
+          View
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

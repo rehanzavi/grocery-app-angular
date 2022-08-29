@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<br><br><br>
+<div class="card text-center" style="margin: auto; width:60%; background-color: rgb(249, 249, 249);" >
+    <div class="row no-gutters"  *ngIf="productDetail as p">
+        <img class="col-sm-5" src="{{'http://rjtmobile.com/grocery/images/'+p.image }}" alt="...">
+
+        <div class="card-body col-sm-7">
+            <h3 class="card-title" style="height: 32px;" >{{ p.productName }}</h3>
+              <h4>{{ p.price | currency: 'INR'}} <span style="color: #666; font-size: 16px"><del>{{ p.mrp | currency: 'INR' }}</del></span></h4>
+               <p>{{p.description}}</p> <br>
+              <a href="#" class="btn btn-success" style="border-bottom: 20px;">Add to Cart</a>
+          </div>
+    </div>
+</div>
